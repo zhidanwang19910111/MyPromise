@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!-- <script src="promise-1.js"></script> -->
     <script src="promise.js"></script>
 </head>
 <body>
     <script>
         var p = new MyPromise(function(resolve, reject){
-            setTimeout(function(){
-                resolve('dan')
-            }, 2000)
+            // setTimeout(function(){
+            // }, 2000)
+            resolve('dan')
+    
         })
         .then((res)=>{
-            console.log(1111)
+            console.log(res)
+            return 'nicai'
         }, (err) => {
             console.log(err)
+        })
+        .then( (res) => {
+            console.log(res)
         })
     </script>
 </body>
