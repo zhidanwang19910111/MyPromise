@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="cusPromise.js"></script>
+</head>
+<body>
+    <script>
+        var p2 = new cusPromise( (resolve, reject) => {
+            // setTimeout( () => {
+            //     resolve(123)
+            // }, 5000)
+            console.log('start')
+            resolve('start')
+        })
+        
+        // var p = new cusPromise( (resolve, reject) => {
+        //     setTimeout( () => {
+
+        //         resolve(p2)
+        //     }, 2000)
+        // })
+        // p.then( (data) => {
+        //     console.log('成功1')
+        // }, (err) => {
+        //     console.log('失败1')
+        // })
+        // p.then( (data) => {
+        //     console.log('成功2')
+        // }, (err) => {
+        //     console.log('失败2')
+        // })
+
+
+
+    </script>
+</body>
+</html>

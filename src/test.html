@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="test.js"></script>
+</head>
+<body>
+    <script>
+
+        /* function getUrl(url, delay){
+            return new Promise( (resolve, reject) => {
+                var req = new XMLHttpRequest();
+                req.open('GET', url, true);
+                req.onload = function(){
+                    if( req.status === 200 ){
+                        setTimeout(function () {
+                            console.log(delay)
+                            resolve(delay);
+                        }, delay);
+                        // resolve( req.responseText )
+                    }else{
+                        reject( new Error(req.statusText) )
+                    }
+                }
+                req.onerror = function(){
+                    reject( new Error(req.statusText) )
+                }
+                req.send()
+            } )
+        }
+        var url1 = "http://httpbin.org/get";
+        var url2 = "http://httpbin.org/get";
+
+        Promise.race( [ getUrl(url1, 1000), getUrl(url2, 200) ] )
+        .then( value => {
+            console.log(value)
+        })  */
+
+        /* getUrl(url)
+        .then( data => {
+            console.log(data)
+        })
+        .catch( err => {
+            console.log(222)
+            console.log('err', err)
+            return new Promise((resolve =>{resolve(1)}))
+        })
+        .then( data => {
+            console.log(data)
+        })
+
+
+        // var p = new MPromise( (resolve, reject) => {
+        //     setTimeout( () => {
+        //         resolve(111)
+        //     }, 1000)
+        // })
+        // .then( res => {
+        //     console.log(res)
+        // }, err => {
+        //     console.log('err', err)
+        // })
+        // .then( res => {
+        //     console.log(222)
+        // }, err => {
+        //     console.log('err', 222)
+        // })
+
+       /*  loadImg('./sdf/', function(onerror, onsucess){
+            // console.log(data, error)
+            console.log('chengong')
+            onsucess('123')
+        }) */
+
+/*         function loadImg(url, cb){
+            var img = new Image()
+            cb( value => {
+                console.log(value)
+            }, err => {
+                console.log(err)
+            })
+
+            // img.onload = function(data){
+            //     // let data = 123
+            //     if(onsucess){
+            //         onsucess(data)
+            //     }
+            // }
+            // img.onerror = function(err){
+            //     console.log(err)
+            //     onerror && onerror(err)
+            // }
+            // img.src = url
+        } */
+
+        // Promise.resolve(1)
+        // .then( res => {
+        //         console.log(11111)
+        //     setTimeout( () => {
+        //         console.log(7777)
+        //         /* setTimeout( () => {
+        //             console.log(55555)
+        //         },2000) */
+        //         return 1111
+        //     },1000)
+        //     setTimeout( () => {
+        //         console.log(666666)
+        //         /* setTimeout( () => {
+        //             console.log(7777777)
+        //         },3000) */
+        //     },500)
+        //     return res
+        // })
+        // .then( res => {
+        //         console.log(res)
+        //     setTimeout( () => {
+        //         console.log(8888)
+        //     },500)
+        // })
+        // .then( res => {
+        //         console.log(33333)
+        //     /* setTimeout( () => {
+        //     },3000) */
+        // })
+
+        // setTimeout( () => {
+        //     console.log(11111)
+        //     /* setTimeout( () => {
+        //         console.log(55555)
+        //     },2000) */
+        // },1000)
+        // setTimeout( () => {
+        //     console.log(222)
+        //     /* setTimeout( () => {
+        //         console.log(7777777)
+        //     },1000) */
+        // },500)
+        // setTimeout( () => {
+        //     console.log(333)
+        // },100)
+        // setTimeout( () => {
+        //     console.log(4444)
+        // },3000)
+        
+
+        /* Promise.resolve(1)
+        .then(param => {
+            console.log("wohsidiyige")
+            setTimeout(() => {
+                console.log('我是第一个')
+            }, 2000)
+            return param
+        })
+        .then(param => {
+            return new Promise((resolve, reject) => {
+                console.log(2);
+                setTimeout(() => {
+                    console.log(8);
+                    resolve(3);
+                }, 3000)
+            });
+        })
+        .then( param => {
+            console.log(4);
+            setTimeout(() => {
+                console.log(5);
+            }, 3000)
+            console.log(6);
+            return param;
+        })
+        .then( param => {
+            console.log(7);
+            console.log(param);
+        }) */
+
+       /*  Promise.resolve(1)
+        .then( res => {
+            console.log(res)
+            throw new Error( 123 );
+        }, err => {
+            console.log('没有错误')
+        })
+        .then(null, res => {
+            console.log('zenmedaowo ')
+            console.log(res)
+            // throw new Error( 123 );
+        })
+        .catch( err => {
+            console.log('发生错误')
+            console.log(err)
+        }) */
+    
+        
+    </script>
+
+    <script>
+        var p1 = new MPromise((resolve, reject) => {
+            resolve( 'coming' )
+        })
+        var p2 = new MPromise((resolve, reject) => {
+            resolve(p1)
+        })
+        
+        p2.then(( value ) => {
+            console.log('then1', value)
+            return '24234234'
+        })
+        .then(( value ) => {
+            console.log('then2', value)
+            // return '24234234'
+        })
+
+        /* setInterval(function(){
+            console.log(p2)
+        }, 1000) */
+
+        // var p1 = new Promise((resolve, reject) => {
+        //     resolve('psdfsdf')
+        // })
+        // var p2 = new Promise((resolve, reject) => {
+        //     resolve(p1)
+        // })
+        // .then( value => {
+
+        //     console.log( 'then1 ', value )
+        // })
+
+
+
+       /*  p.then(( value ) => {
+            console.log('then1', value)
+        })
+
+        p.then(( value ) => {
+            console.log('then2', value)
+        }) */
+
+        // setInterval(function(){
+        //     console.log(p)
+        // }, 1000)
+
+    </script>
+</body>
+</html> 
